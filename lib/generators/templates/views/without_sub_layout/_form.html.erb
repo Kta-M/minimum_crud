@@ -1,0 +1,26 @@
+<%%= form_for(@record) do |f| %>
+
+  <%% if @record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%%= "#{pluralize(@record.errors.count, "error")} prohibited this #{@model.to_s} from being saved:" %></h2>
+
+      <ul>
+      <%% @record.errors.full_messages.each do |message| %>
+        <li><%%= message %></li>
+      <%% end %>
+      </ul>
+    </div>
+  <%% end %>
+
+<% @attributes.each do |attribute| -%>
+  <div class="field">
+    <%%= f.label :<%= attribute %> %>
+    <%%= f.text_field :<%= attribute %> %>
+  </div>
+<% end -%>
+
+  <div class="actions">
+    <%%= f.submit %>
+  </div>
+
+<%% end %>

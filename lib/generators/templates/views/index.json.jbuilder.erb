@@ -1,0 +1,4 @@
+json.array!(@records) do |record|
+  json.extract! record, :id, <%= @attributes_argument %>
+  json.url url_for(action: :show, id: record, format: :json, only_path: false)
+end

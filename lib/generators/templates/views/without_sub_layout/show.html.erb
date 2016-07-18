@@ -1,0 +1,13 @@
+<h1><%%= "Show #{@model.to_s}" %></h1>
+
+<p id="notice"><%%= notice %></p>
+
+<% @attributes.each do |attribute| -%>
+<p>
+  <strong><%= attribute.humanize %>:</strong>
+  <%%= @record.<%= attribute %> %>
+</p>
+<% end -%>
+
+<%%= link_to 'Edit', url_for(action: :edit, id: @record) %> |
+<%%= link_to 'Back', url_for(action: :index) %>

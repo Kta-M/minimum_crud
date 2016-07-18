@@ -1,0 +1,6 @@
+<% @attributes.each do |attribute| -%>
+  <div class="field">
+    <%%= f.label :<%= attribute %> %>
+    <%%= f.text_field :<%= attribute %> %>
+  </div>
+<% end -%>

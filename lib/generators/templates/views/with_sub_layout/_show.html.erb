@@ -1,0 +1,6 @@
+<% @attributes.each do |attribute| -%>
+<p>
+  <strong><%= attribute.humanize %>:</strong>
+  <%%= @record.<%= attribute %> %>
+</p>
+<% end -%>

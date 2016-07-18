@@ -1,0 +1,9 @@
+<h1><%= "Listing #{@model.to_s.pluralize}" %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<%= render 'index' %>
+
+<br>
+
+<%= link_to "New #{@model.to_s}", url_for(action: :new) %>

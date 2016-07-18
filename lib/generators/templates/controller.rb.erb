@@ -1,0 +1,17 @@
+<% if namespaced? -%>
+require_dependency "<%= namespaced_path %>/application_controller"
+<% end -%>
+<% module_namespacing do -%>
+class <%= class_name %>Controller < ApplicationController
+  include MinimumCrud::Controllers::Base
+<% if options.has_key?('sub_layout') -%>
+  minimum_crud_sub_layout :<%= options[:sub_layout] %>
+<% end -%>
+<% if options.has_key?('enable_json') -%>
+  minimum_crud_enable_json <%= options[:enable_json] %>
+<% end -%>
+<% if options.has_key?('permit_params') -%>
+  minimum_crud_permit_params <%= options[:permit_params].map{|p| ":#{p}"}.join(', ') %>
+<% end -%>
+end
+<% end -%>
